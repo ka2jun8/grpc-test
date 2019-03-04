@@ -20,3 +20,7 @@ protoc:
 .PHONY: doc
 doc:
 	protoc --doc_out=html,index.html:./ proto/*.proto
+
+.PHONY: mockgen
+mockgen:
+	mockgen -source ./go/proto/book.pb.go -destination ./go/mock_book/mock_book.go
